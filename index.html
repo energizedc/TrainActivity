@@ -1,1 +1,125 @@
 
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <meta name = "viewport" content="width=device-width, initial-scale= 1.0">   
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>HW7 Train Schedule</title>
+    <link rel="stylesheet"  type = "text/css"  href="assets/css/style.css">
+    <!-----Firebasebootstrap references needs to be here             -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+    <!-----Firebase references needs to be here             -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-----Moments references needs to be here             -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+   
+</head>
+<!------------------Page Header--And Bootstrap Begins Here-------------------------------------------------->
+<body>
+    <style>
+        #jumbotron  {
+           
+            border: 3px black;
+            background-color:darkcyan ;
+            text-align: center; 
+            text-decoration-color: white;
+            padding-bottom: 8px;
+            padding-top: 5px;
+        }
+        .panel-heading {
+           
+            background-color:lightblue ;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }    
+        #trainTable {
+            background-color:lightgray;
+        }
+        #trainName:hover, #destination:hover, #firstTrainTime:hover, #frequency:hover {
+            background-color: lightsalmon;
+        }
+       #submit {
+        background-color:lightskyblue;
+       }
+        #form1 {
+            
+
+        }
+     </style>
+
+    <div class="container">
+        <div id = "jumbotron">
+            <div class="container1"></div>
+            <h1 class = "header1">Train Schedule </h1>
+            <br>
+            <h3 class = "header1">All Aboard !!!</h3>   
+        </div>
+<!--------------------Current Trains------------------------------------------------>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover" id='trainTable'>
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+<!-------------------------------input for additional trains------------------------------------->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Add a New Train</strong></h3>
+            </div>
+
+            <div class="panel-body">
+                <!-- Entry Form -->
+            <form id = "form1">      
+                <div class="col-lg-5" id = "c1">
+                    <label><strong>Train Name</strong></label><br/>
+                    <input type="text" id="trainName"/><br/>
+                </div>    
+                <div class="col-lg-5" id = "c1">
+                    <label><strong>Destination</strong></label><br/>
+                    <input type="text" id="destination"/><br/>
+                </div>    
+                <div class="col-lg-5" id = "c1">
+                    <label><strong>Frequency  (min)</strong></label><br/>
+                    <input type="text" id="frequency"/><br/><br/>
+                </div>
+                <div class="col-lg-5" id = "c1">
+                    <label><strong>First Train Time    hh:mm = in military time</strong></label><br/>
+                    <input type="text" id="firstTrainTime"/><br/>
+                </div>    
+                <div class="row">
+                    <div class="col-lg-5" id = "s1">
+                        <input type="submit" id = "submit" value="Submit" /><br/><br>
+                    </div>
+                </div>
+            </form>      
+    </div>
+    
+<script   href="assets/javascript/app.js">
+</script>
+</body>
+</html>
